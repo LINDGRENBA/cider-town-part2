@@ -38,16 +38,9 @@ class CiderControl extends React.Component {
     this.setState({ selectedCider: selectedCider }); //sets selectedCider above to our filtered cider item
   }
 
-  handleChangingNumberOfRemainginPints = (kegToDegrement) => {
-    const newCiderListWithUpdatedPints = this.state.mainCiderList //attempt 2
-      .filter(cider => cider.id !== this.state.selectedCider.id)
-      .concat(kegToDegrement);
-    this.setState ({ 
-      mainCiderList: newCiderListWithUpdatedPints,
-      selectedCider: null
-    }); //attempt 2
-    // const selectedCider = this.state.mainCiderList.filter( cider => cider.id === id)[0]; //attempt 1
-    // this.setState({ remainingPints: this.state.remainingPints -- }); //decrementing remainginPints //attempt 1
+  handleChangingNumberOfRemainginPints = (id) => {
+    const selectedCider = this.state.mainCiderList.filter( cider => cider.id === id)[0];
+    this.setState({ remainingPints: this.state.remainingPints -- }); //decrementing remainginPints
   }
 
   render () {

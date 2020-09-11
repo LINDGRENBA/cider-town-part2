@@ -2,16 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Cider(props) {
-  const { cider } = props;
-
-  function handleUpdateKegStatus(event) {
-    event.preventDefault();
-    props.onCiderPour({ remainingPints: this.remainingPints -- });
-  }
-
+  
   return (
     <React.Fragment>
-      <h2>{props.name} <button onClick = {() => props.whenCiderPoured(cider)}>Pour</button></h2> {/*figure out how to use this button... whenPourButtonClicked prob similar to above whenCiderClicked...but should this be in */}
+      <h2>{props.name} <button onClick = {() => props.whenCiderPoured(props.id)}>Pour</button></h2> {/*figure out how to use this button... whenPourButtonClicked prob similar to above whenCiderClicked...but should this be in */}
       <div onClick = {() => props.whenCiderClicked(props.id)} > 
       {/* the above 'whenCiderClicked' comes from CiderMenu and has a reference to onCiderSelection in the CiderControl componenet */}
         <p>{props.brewery}</p>
