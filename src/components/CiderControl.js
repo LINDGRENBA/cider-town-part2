@@ -1,7 +1,9 @@
 import React from 'react';
+import AddCiderForm from './AddCiderForm';
 import CiderDetail from './CiderDetail'; //not using this yet
 import CiderMenu from './CiderMenu';
 import ReusableForm from './ReusableForm';
+// import AddCiderForm from './AddCiderForm'; may not need this here
 
 class CiderControl extends React.Component {
 
@@ -27,6 +29,12 @@ class CiderControl extends React.Component {
     }
   }
 
+  handleAddingNewCiderToMenu = (newCider) => {
+    const newMainCiderList = this.state.mainCiderList.concat(newCider);
+    this.setState({ mainCiderList: newMainCiderList, //create a new array and add new cider onto it
+                    formVisibleOnPage: false }); //hide the form
+  }
+
   render () {
     let currentlyVisibleState = null;
     let buttonText = null;
@@ -35,7 +43,7 @@ class CiderControl extends React.Component {
       currentlyVisibleState = <CiderDetail cider = { this.state.selectedCider } />
       buttonText = "Return to Cider Menu";
     } else if (this.state.formVisibleOnPage) { //if someone clicked the add a cider button
-      currentlyVisibleState = <ReusableForm onNewCiderTapped = { this.handleAddingNewCiderToMenu } />
+      currentlyVisibleState = <AddCiderForm onNewCiderTapped = { this.handleAddingNewCiderToMenu } />
       buttonText = "Return to Cider Menu";
     } else { //if no cider selected and not viewing form to add a cider
       currentlyVisibleState = <CiderMenu ciderMenu = { this.state.mainCiderList } onCiderSelection = { this.handleChangingSelectedCider } />

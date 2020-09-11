@@ -1,4 +1,5 @@
 import React from 'react';
+import CiderControl from './CiderControl';
 
 
 function App() {
