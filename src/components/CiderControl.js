@@ -1,6 +1,10 @@
 import React from 'react';
+import CiderDetail from './CiderDetail';
+import CiderMenu from './CiderMenu';
+import ReusableForm from './ReusableForm';
 
 class CiderControl extends React.Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -8,6 +12,7 @@ class CiderControl extends React.Component {
       mainCiderList: [],
       selectedCider: null
     };
+    
   }
 
   render () {
@@ -18,7 +23,7 @@ class CiderControl extends React.Component {
       currentlyVisibleState = <CiderDetail cider = { this.state.selectedCider } />
       buttonText = "Return to Cider Menu";
     } else if (this.state.formVisibleOnPage) { //if someone clicked the add a cider button
-      currentlyVisibleState = <AddCider onNewCiderTapped = { this.handleAddingNewCiderToMenu } />
+      currentlyVisibleState = <ReusableForm onNewCiderTapped = { this.handleAddingNewCiderToMenu } />
       buttonText = "Return to Cider Menu";
     } else { //if no cider selected and not viewing form to add a cider
       currentlyVisibleState = <CiderMenu ciderMenu = { this.state.mainCiderList } onCiderSelection = { this.handleChangingSelectedCider } />
@@ -28,7 +33,7 @@ class CiderControl extends React.Component {
     return (
       <React.Fragment>
         { currentlyVisibleState }
-    <button onClick = { this.handleClick }>{buttonText}</button>
+        <button onClick = { this.handleClick }>{buttonText}</button>
       </React.Fragment>
     );
   }
