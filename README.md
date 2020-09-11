@@ -26,11 +26,12 @@
 |  As a user, I want to submit a form to add a new keg to a list.   |   completed   |   none   |
 |  As a user, I want to be able to click on a keg to see its detail page.   |   completed   |   none   |
 |  As a user, I want to see how many pints are left in a keg.   |   in progress   |   none   |
-|  As a user, I want to be able to click a button next to a keg whenever I sell a pint of it. This should decrease the number of pints left by 1. Pints should not be able to go below 0.   |   in progress   |   none   |
+|  As a user, I want to be able to click a button _next to a keg_ whenever I sell a pint of it. This should decrease the number of pints left by 1. Pints should not be able to go below 0.   |   in progress   |   none   |
 
 
 ## Stretch Goals
 
+* Add additional details to CiderDetail component to show more than is displayed on CiderMenu
 * Add a header
 * Style header
 * Add an about and events section
