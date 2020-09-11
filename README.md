@@ -10,13 +10,13 @@
 
 ## Setup / Installation
 
-* open a text editory, such as Visual Studio Code
-* open the terminal using `cmd + shift + ~` on mac or `ctrl + shift + ~`
-* in the terminal, clone the repository `git clone REPOLINK`
-* navigate into the directory `cd cider-town`
-* enter the following commapnd into the terminal `npm install --save-exact react-scripts@3.2.0`
-* start the project by running the following command in the terminal `npm start`
-* the project should open in the browser
+* Open a text editor, such as Visual Studio Code
+* Open the terminal using `cmd + shift + ~` on Mac or `ctrl + shift + ~` on Windows
+* In the terminal, clone the repository `git clone https://github.com/LINDGRENBA/cider-town.git`
+* Navigate into the directory by entering `cd cider-town` into the terminal
+* Enter the following command into the terminal `npm install --save-exact react-scripts@3.2.0`
+* Start the project by running the following command in the terminal `npm start`
+* The project should open in the browser
 
 
 ## User Stories
