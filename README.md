@@ -20,17 +20,21 @@
 
 
 ## User Stories
-
-* As a user, I want to see a list/menu of all available kegs. For each keg, I want to see its name, brewery, alcohol content and price.
-* As a user, I want to submit a form to add a new keg to a list.
-* As a user, I want to be able to click on a keg to see its detail page.
-* As a user, I want to see how many pints are left in a keg.
-* As a user, I want to be able to click a button next to a keg whenever I sell a pint of it. This should decrease the number of pints left by 1. Pints should not be able to go below 0.
+| Goal | Status | Notes |
+|---------|-------|-----|
+|  As a user, I want to see a list/menu of all available kegs. For each keg, I want to see its name, brewery, alcohol content and price.   |   completed   |   none   |
+|  As a user, I want to submit a form to add a new keg to a list.   |   completed   |   none   |
+|  As a user, I want to be able to click on a keg to see its detail page.   |   completed   |   none   |
+|  As a user, I want to see how many pints are left in a keg.   |   in progress   |   none   |
+|  As a user, I want to be able to click a button next to a keg whenever I sell a pint of it. This should decrease the number of pints left by 1. Pints should not be able to go below 0.   |   in progress   |   none   |
 
 
 ## Stretch Goals
 
+* Add a header
+* Style header
 * Add an about and events section
+* Style about and events sections
 
 ## Component Diagram
 
