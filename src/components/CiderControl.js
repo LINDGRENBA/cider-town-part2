@@ -35,6 +35,11 @@ class CiderControl extends React.Component {
                     formVisibleOnPage: false }); //hide the form
   }
 
+  handleChangingSelectedCider = (id) => {
+    const selectedCider = this.state.mainCiderList.filter( cider => cider.id === id )[0]; //filter gives us an array, so we use [0]
+    this.setState({ selectedCider: selectedCider });
+  }
+
   // handleChangingNumberOfPints = (ciderToUpdate) => {
   //   select the cider to update
   //   target its remainingPints property
