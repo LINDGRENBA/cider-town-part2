@@ -41,7 +41,7 @@ the project should open in the browser
 | Message or Error | Cause | Fix |
 |---------|-------|-----|
 |  Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports. Check the render method of `CiderControl`.  |  Caused by importing empty files?  |  Add content to empty components  |
-|  No button text visible in reusable form submit button  |   |   |
+|  No button text visible in reusable form submit button  |  Incorrect component used in CiderControl.js  |  for `else if (this.state.formVisibleOnPage)` conditional, change `<ReusableForm />` to `<AddCiderForm />` |
 |   |   |   |
 
 
