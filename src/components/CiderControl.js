@@ -2,7 +2,6 @@ import React from 'react';
 import AddCiderForm from './AddCiderForm';
 import CiderDetail from './CiderDetail';
 import CiderMenu from './CiderMenu';
-import AddCiderForm from './AddCiderForm';
 
 class CiderControl extends React.Component {
 

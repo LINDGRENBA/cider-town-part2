@@ -2,11 +2,11 @@ import React from 'react';
 import Cider from './Cider';
 import PropTypes from 'prop-types'; 
 
-function CiderMenu(props) {
+function CiderMenu(props) {  //properties are passed in from cidercontrol
   return (
     <React.Fragment> 
       { props.ciderMenu.map((cider) =>
-        <Cider 
+        <Cider //we assign properties to the cider component here
           whenCiderClicked = { props.onCiderSelection } //onCidSel comes from prop of ciderMenu in CiderControl
           name = { cider.name }
           brewery = { cider.brewery }
