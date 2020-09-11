@@ -38,7 +38,7 @@ class CiderControl extends React.Component {
     this.setState({ selectedCider: selectedCider }); //sets selectedCider above to our filtered cider item
   }
 
-  // handleChangingNumberOfPints = (ciderToUpdate) => {
+  // handleChangingNumberOfPints = (id) => {
   //   select the cider to update
   //   target its remainingPints property
   //   update it
@@ -56,7 +56,7 @@ class CiderControl extends React.Component {
       buttonText = "Return to Cider Menu";
     } else { //if no cider selected and not viewing form to add a cider
       currentlyVisibleState = <CiderMenu ciderMenu = { this.state.mainCiderList } onCiderSelection = { this.handleChangingSelectedCider } /> //onCiderSelection is holding a property which is the handleChangingSelCid method
-      buttonText = "Add Cider";
+      buttonText = "Add New Keg";
     }
 
     return (
