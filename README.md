@@ -21,10 +21,10 @@ the project should open in the browser
 
 ## User Stories
 
-* As a user, I want to see a list/menu of all available kegs. For each keg, I want to see its name, brand, price and alcoholContent (or perhaps something like flavor for a kombucha store).
+* As a user, I want to see a list/menu of all available kegs. For each keg, I want to see its name, brewery, alcohol content and price.
 * As a user, I want to submit a form to add a new keg to a list.
 * As a user, I want to be able to click on a keg to see its detail page.
-* As a user, I want to see how many pints are left in a keg. Hint: A full keg has roughly 124 pints.
+* As a user, I want to see how many pints are left in a keg.
 * As a user, I want to be able to click a button next to a keg whenever I sell a pint of it. This should decrease the number of pints left by 1. Pints should not be able to go below 0.
 
 
@@ -38,10 +38,10 @@ the project should open in the browser
 
 
 ## Errors / Bugs
-| Message | Cause | Fix |
+| Message or Error | Cause | Fix |
 |---------|-------|-----|
-|   |   |   |
-|   |   |   |
+|  Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports. Check the render method of `CiderControl`.  |  Caused by importing empty files?  |  Add content to empty components  |
+|  No button text visible in reusable form submit button  |   |   |
 |   |   |   |
 
 

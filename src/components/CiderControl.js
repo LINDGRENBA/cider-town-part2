@@ -1,5 +1,5 @@
 import React from 'react';
-import CiderDetail from './CiderDetail';
+import CiderDetail from './CiderDetail'; //not using this yet
 import CiderMenu from './CiderMenu';
 import ReusableForm from './ReusableForm';
 
@@ -11,8 +11,20 @@ class CiderControl extends React.Component {
       formVisibleOnPage: false,
       mainCiderList: [],
       selectedCider: null
-    };
-    
+    };    
+  }
+
+  handleClick = () => {
+    if(this.state.selectedCider != null) {   //if a cider has been selected
+      this.setState ({
+        formVisibleOnPage: false, //don't show the reusable form
+        selectedCider: null
+      }) 
+    } else {
+      this.setState( prevState => ({ //otherwise, switch formVisibleOnPage to false
+        formVisibleOnPage: !prevState.formVisibleOnPage
+      }));
+    }
   }
 
   render () {
