@@ -1,9 +1,8 @@
 import React from 'react';
 import AddCiderForm from './AddCiderForm';
-import CiderDetail from './CiderDetail'; //not using this yet
+import CiderDetail from './CiderDetail';
 import CiderMenu from './CiderMenu';
-import ReusableForm from './ReusableForm';
-// import AddCiderForm from './AddCiderForm'; may not need this here
+import AddCiderForm from './AddCiderForm';
 
 class CiderControl extends React.Component {
 
@@ -35,9 +34,9 @@ class CiderControl extends React.Component {
                     formVisibleOnPage: false }); //hide the form
   }
 
-  handleChangingSelectedCider = (id) => {
+  handleChangingSelectedCider = (id) => { //we pass this method as a property below
     const selectedCider = this.state.mainCiderList.filter( cider => cider.id === id )[0]; //filter gives us an array, so we use [0]
-    this.setState({ selectedCider: selectedCider });
+    this.setState({ selectedCider: selectedCider }); //sets selectedCider above to our filtered cider item
   }
 
   // handleChangingNumberOfPints = (ciderToUpdate) => {
@@ -57,7 +56,7 @@ class CiderControl extends React.Component {
       currentlyVisibleState = <AddCiderForm onNewCiderTapped = { this.handleAddingNewCiderToMenu } />
       buttonText = "Return to Cider Menu";
     } else { //if no cider selected and not viewing form to add a cider
-      currentlyVisibleState = <CiderMenu ciderMenu = { this.state.mainCiderList } onCiderSelection = { this.handleChangingSelectedCider } />
+      currentlyVisibleState = <CiderMenu ciderMenu = { this.state.mainCiderList } onCiderSelection = { this.handleChangingSelectedCider } /> //onCiderSelection is holding a property which is the handleChangingSelCid method
       buttonText = "Add Cider";
     }
 
