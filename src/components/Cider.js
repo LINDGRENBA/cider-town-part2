@@ -5,10 +5,10 @@ function Cider(props) {
   return (
     <React.Fragment>
       <div onClick = {() => props.whenCiderClicked(props.id)} >
-        <h2>{props.name}</h2>
+        <h2>{props.name} <button>Pour</button></h2> {/*figure out how to use this button... whenPourButtonClicked */}
         <p>{props.brewery}</p>
         <p>{props.alcoholContent}</p>
-        <p>{props.price}</p>
+        <p>{props.price}%</p>
         <p>{props.remainingPints}</p>
       </div>
     </React.Fragment>

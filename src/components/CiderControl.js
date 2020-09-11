@@ -35,6 +35,12 @@ class CiderControl extends React.Component {
                     formVisibleOnPage: false }); //hide the form
   }
 
+  // handleChangingNumberOfPints = (ciderToUpdate) => {
+  //   select the cider to update
+  //   target its remainingPints property
+  //   update it
+  // }
+
   render () {
     let currentlyVisibleState = null;
     let buttonText = null;
