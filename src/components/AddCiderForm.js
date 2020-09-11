@@ -7,7 +7,7 @@ function AddCiderForm(props) {
 
   function handleAddCiderFormSubmission(event) {
     event.preventDefault();
-    props.onNewCiderTapped({ name: event.target.name.value, brewery: event.target.brewery.value, alcoholContent: event.target.alcoholContent.value, price: event.target.price.value, remainingPints: event.target.remainingPints.value, id: v4() });
+    props.onNewCiderTapped({ name: event.target.name.value, brewery: event.target.brewery.value, alcoholContent: event.target.alcoholContent.value, price: event.target.price.value, remainingPints: 124, id: v4() });
   }
 
   return (
