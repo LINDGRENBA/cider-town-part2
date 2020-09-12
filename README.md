@@ -6,7 +6,7 @@
 
 ## Description
 
-*Enjoy all the delicious, refreshing flavors of cider that Cider Town has to offer. Tart, sweet, sour, we've got it all.*
+*Enjoy all the delicious, refreshing flavors of cider that Cider Town has to offer. Tart, sweet, sour, we've got it all. Use this app to track which flavors are on tap, how much is left in the keg and the details about each type of cider available.*
 
 ## Setup / Installation
 
@@ -25,8 +25,8 @@
 |  As a user, I want to see a list/menu of all available kegs. For each keg, I want to see its name, brewery, alcohol content and price.   |   completed   |   none   |
 |  As a user, I want to submit a form to add a new keg to a list.   |   completed   |   none   |
 |  As a user, I want to be able to click on a keg to see its detail page.   |   completed   |   none   |
-|  As a user, I want to see how many pints are left in a keg.   |   in progress   |   none   |
-|  As a user, I want to be able to click a button _next to a keg_ whenever I sell a pint of it. This should decrease the number of pints left by 1. Pints should not be able to go below 0.   |   in progress   |   none   |
+|  As a user, I want to see how many pints are left in a keg.   |   completed   |   none   |
+|  As a user, I want to be able to click a button _next to a keg_ whenever I sell a pint of it. This should decrease the number of pints left by 1. Pints should not be able to go below 0.   |   completed   |   none   |
 
 
 ## Stretch Goals
