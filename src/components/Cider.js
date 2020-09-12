@@ -13,10 +13,10 @@ function Cider(props) {
         </button>
       </h2> 
       <div onClick = {() => props.whenCiderClicked(props.id)} > 
-        <p>{props.brewery}</p>
-        <p>{props.alcoholContent}</p>
-        <p>{props.price}%</p>
-        <p>{props.remainingPints}</p>
+        <p><em>Brewery: </em>{props.brewery}</p>
+        <p><em>ABV: </em>{props.alcoholContent}%</p>
+        <p><em>Price: </em>${props.price}.00</p>
+        <p><em>Left in the keg: </em>{props.remainingPints}</p>
       </div>
     </React.Fragment>
   );

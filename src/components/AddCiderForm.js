@@ -13,7 +13,7 @@ function AddCiderForm(props) {
   return (
     <React.Fragment>
       <ReusableForm
-        formSubmissionHandler = { handleAddCiderFormSubmission } //in ticket ex this was handleNewTicketFormSub
+        formSubmissionHandler = { handleAddCiderFormSubmission } 
         buttonText = "Add to Menu" />
     </React.Fragment>
   );

@@ -15,13 +15,13 @@ class CiderControl extends React.Component {
   }
 
   handleClick = () => {
-    if(this.state.selectedCider != null) {   //if a cider has been selected
+    if(this.state.selectedCider != null) { 
       this.setState ({
-        formVisibleOnPage: false, //don't show the reusable form
+        formVisibleOnPage: false,
         selectedCider: null
       }) 
     } else {
-      this.setState( prevState => ({ //otherwise, switch formVisibleOnPage to false
+      this.setState( prevState => ({ 
         formVisibleOnPage: !prevState.formVisibleOnPage
       }));
     }
@@ -29,13 +29,13 @@ class CiderControl extends React.Component {
 
   handleAddingNewCiderToMenu = (newCider) => {
     const newMainCiderList = this.state.mainCiderList.concat(newCider);
-    this.setState({ mainCiderList: newMainCiderList, //create a new array and add new cider onto it
-                    formVisibleOnPage: false }); //hide the form
+    this.setState({ mainCiderList: newMainCiderList, 
+                    formVisibleOnPage: false }); 
   }
 
-  handleChangingSelectedCider = (id) => { //we pass this method as a property below
-    const selectedCider = this.state.mainCiderList.filter( cider => cider.id === id )[0]; //filter gives us an array, so we use [0]
-    this.setState({ selectedCider: selectedCider }); //sets selectedCider above to our filtered cider item
+  handleChangingSelectedCider = (id) => { 
+    const selectedCider = this.state.mainCiderList.filter( cider => cider.id === id )[0]; 
+    this.setState({ selectedCider: selectedCider }); 
   }
 
   handleChangingNumberOfRemainginPints = (id) => {
@@ -48,14 +48,14 @@ class CiderControl extends React.Component {
     let currentlyVisibleState = null;
     let buttonText = null;
 
-    if(this.state.selectedCider != null) { //if a specific cider has been selected
+    if(this.state.selectedCider != null) { 
       currentlyVisibleState = <CiderDetail cider = { this.state.selectedCider } />
       buttonText = "Return to Cider Menu";
-    } else if (this.state.formVisibleOnPage) { //if someone clicked the add a cider button
+    } else if (this.state.formVisibleOnPage) { 
       currentlyVisibleState = <AddCiderForm onNewCiderTapped = { this.handleAddingNewCiderToMenu } />
       buttonText = "Return to Cider Menu";
-    } else { //if no cider selected and not viewing form to add a cider
-      currentlyVisibleState = <CiderMenu ciderMenu = { this.state.mainCiderList } onCiderSelection = { this.handleChangingSelectedCider } onCiderPour = { this.handleChangingNumberOfRemainginPints } /> //onCiderSelection is holding a property which is the handleChangingSelCid method, we're also passing in the method
+    } else { 
+      currentlyVisibleState = <CiderMenu ciderMenu = { this.state.mainCiderList } onCiderSelection = { this.handleChangingSelectedCider } onCiderPour = { this.handleChangingNumberOfRemainginPints } /> 
       buttonText = "Add New Keg";
     }
 
