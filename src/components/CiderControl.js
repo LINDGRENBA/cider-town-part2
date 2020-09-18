@@ -2,6 +2,7 @@ import React from 'react';
 import AddCiderForm from './AddCiderForm';
 import CiderDetail from './CiderDetail';
 import CiderMenu from './CiderMenu';
+import { connect } from 'react-redux'; 
 
 class CiderControl extends React.Component {
 
@@ -9,7 +10,7 @@ class CiderControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      mainCiderList: [],
+      // mainCiderList: [], redux will now handle our ciderList, not react
       selectedCider: null
     };    
   }
@@ -32,6 +33,22 @@ class CiderControl extends React.Component {
     this.setState({ mainCiderList: newMainCiderList, 
                     formVisibleOnPage: false }); 
   }
+
+  // handleAddingNewCiderToMenu = (newCider) => {
+  //   const { dispatch } = this.props;
+  //   const { id, name, brewery, alcoholContent, price, remainingPints } = newCider;
+  //   const action = {
+  //     type: 'ADD_CIDER',
+  //     name: name,
+  //     brewery: brewery,
+  //     alcoholContent: alcoholContent,
+  //     price: price,
+  //     remainingPints: remainingPints,
+  //     id: id
+  //   }
+  //   dispatch(action); //dispatch our add 
+  //   this.setState({formVisibleOnPage: false}); //still have to handle local state
+  // }
 
   handleChangingSelectedCider = (id) => { 
     const selectedCider = this.state.mainCiderList.filter( cider => cider.id === id )[0]; 
@@ -68,4 +85,6 @@ class CiderControl extends React.Component {
   }
 }
 
-export default CiderControl;
+// CiderControl = connect()(CiderControl); // redifines our cidercontrol as a new component, returns component itself with powerful tools at our disposal such as dispatch() and mapStateToProps()
+
+export default CiderControl; 

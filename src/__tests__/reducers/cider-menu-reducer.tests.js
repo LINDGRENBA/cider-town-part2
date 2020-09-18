@@ -23,7 +23,7 @@ describe('ciderMenuReducer', () => {
 
   let action;
   let ciderData = {
-    type: 'ADD_TICKET',
+    type: 'ADD_CIDER',
     name:"Blackberry Cider",
     brewery:"Avid",
     alcoholContent: 6.2,
@@ -39,7 +39,7 @@ describe('ciderMenuReducer', () => {
   test('Should successfully add a new cider object to the menu', () => {
     const { name, brewery, alcoholContent, price, remainingPints, id } = ciderData;
     action = {
-      type: 'ADD_TICKET',
+      type: 'ADD_CIDER',
       name: name,
       brewery: brewery,
       alcoholContent: alcoholContent,
@@ -62,7 +62,7 @@ describe('ciderMenuReducer', () => {
 
   test('Should successfully delete a ciderMenu object', () => {
     action = {
-      type: 'DELETE_TICKET',
+      type: 'DELETE_CIDER',
       id: 1
     };
 
