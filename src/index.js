@@ -9,6 +9,10 @@ import { Provider } from 'react-redux'; // for redux
 
 const store = createStore(reducer); // store is a redux store that knows how to handle the actions we've defined
 
+store.subscribe(() => 
+  console.log(store.getState())
+);
+
 ReactDOM.render(
   <Provider store={store}> {/*pass store as a prop to provider*/}
     <App />
