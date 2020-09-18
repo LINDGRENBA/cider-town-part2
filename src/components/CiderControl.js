@@ -85,7 +85,8 @@ class CiderControl extends React.Component {
 }
 
 CiderControl.propTypes = {
-  mainCiderList: PropTypes.object
+  mainCiderList: PropTypes.object,
+  formVisibleOnPage: PropTypes.bool
 };
 
 const mapStateToProps = state => {
