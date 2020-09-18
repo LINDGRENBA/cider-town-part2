@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 function CiderMenu(props) {  
   return (
     <React.Fragment> 
-      { props.ciderMenu.map((cider) =>
+      { Object.values(props.ciderMenu).map((cider) =>
         <Cider
           whenCiderClicked = { props.onCiderSelection }
           whenCiderPoured = { props.onCiderPour }
@@ -22,7 +22,7 @@ function CiderMenu(props) {
 }
 
 CiderMenu.propTypes = {
-  ciderMenu: PropTypes.array,
+  ciderMenu: PropTypes.object,
   onCiderSelection: PropTypes.func,
   onCiderPour: PropTypes.func
 };

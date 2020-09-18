@@ -3,6 +3,7 @@ import AddCiderForm from './AddCiderForm';
 import CiderDetail from './CiderDetail';
 import CiderMenu from './CiderMenu';
 import { connect } from 'react-redux'; 
+import PropTypes from 'prop-types';
 
 class CiderControl extends React.Component {
 
@@ -28,12 +29,6 @@ class CiderControl extends React.Component {
     }
   }
 
-  // handleAddingNewCiderToMenu = (newCider) => {
-  //   const newMainCiderList = this.state.mainCiderList.concat(newCider);
-  //   this.setState({ mainCiderList: newMainCiderList, 
-  //                   formVisibleOnPage: false }); 
-  // }
-
   handleAddingNewCiderToMenu = (newCider) => {
     const { dispatch } = this.props; // deconstruct dispatch from props
     const { id, name, brewery, alcoholContent, price, remainingPints } = newCider;
@@ -50,15 +45,15 @@ class CiderControl extends React.Component {
     this.setState({formVisibleOnPage: false}); //still have to handle local state
   }
 
-  handleChangingSelectedCider = (id) => { 
-    const selectedCider = this.state.mainCiderList.filter( cider => cider.id === id )[0]; 
-    this.setState({ selectedCider: selectedCider }); 
+  handleChangingSelectedCider = (id) => {
+    const selectedCider = this.props.mainCiderList[id]; //grab a slice of state from the store 
+    this.setState({selectedCider: selectedCider});
   }
 
   handleChangingNumberOfRemainginPints = (id) => {
-    const selectedKeg = this.state.mainCiderList.filter( cider => cider.id === id )[0];
+    const selectedKeg = this.props.mainCiderList[id];
     const newNumberOfPints = selectedKeg.remainingPints--;
-    this.setState({ selectedKeg: newNumberOfPints });
+    this.setState({selectedKeg: newNumberOfPints});
   }
 
   render () {
@@ -72,7 +67,7 @@ class CiderControl extends React.Component {
       currentlyVisibleState = <AddCiderForm onNewCiderTapped = { this.handleAddingNewCiderToMenu } />
       buttonText = "Return to Cider Menu";
     } else { 
-      currentlyVisibleState = <CiderMenu ciderMenu = { this.state.mainCiderList } onCiderSelection = { this.handleChangingSelectedCider } onCiderPour = { this.handleChangingNumberOfRemainginPints } /> 
+      currentlyVisibleState = <CiderMenu ciderMenu = { this.props.mainCiderList } onCiderSelection = { this.handleChangingSelectedCider } onCiderPour = { this.handleChangingNumberOfRemainginPints } /> 
       buttonText = "Add New Keg";
     }
 
@@ -85,6 +80,16 @@ class CiderControl extends React.Component {
   }
 }
 
-CiderControl = connect()(CiderControl); // redifines our cidercontrol as a new component, returns component itself with powerful tools at our disposal such as dispatch() and mapStateToProps()
+CiderControl.propTypes = {
+  mainCiderList: PropTypes.object
+};
+
+const mapStateToProps = state => {
+  return {
+    mainCiderList: state
+  }
+}
+
+CiderControl = connect(mapStateToProps)(CiderControl); // redifines our cidercontrol as a new component, returns component itself with powerful tools at our disposal such as dispatch() and mapStateToProps()
 
 export default CiderControl;
