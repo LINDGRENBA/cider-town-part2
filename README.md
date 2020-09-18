@@ -1,6 +1,6 @@
-# _Cider Town_
+# _Cider Town Part II_
 
-#### _React Exercise for Epicodus, 09.11.2020_
+#### _React Exercise for Epicodus, 09.18.2020_
 
 #### By _**Brittany Lindgren**_
 
@@ -47,7 +47,7 @@
 |---------|-------|-----|
 |  Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports. Check the render method of `CiderControl`.  |  Caused by importing empty files?  |  Add content to empty components  |
 |  No button text visible in reusable form submit button  |  Incorrect component used in CiderControl.js  |  for `else if (this.state.formVisibleOnPage)` conditional, change `<ReusableForm />` to `<AddCiderForm />` |
-|   |   |   |
+|  Adding new Cider is only adding the initial cider --> as a result, have 3 'Blackberry Cider' objects, each with the same properties and same id number  |   |   |
 
 
 
