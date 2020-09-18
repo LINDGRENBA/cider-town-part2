@@ -19,13 +19,14 @@ class CiderControl extends React.Component {
   handleClick = () => {
     if(this.state.selectedCider != null) { 
       this.setState ({
-        formVisibleOnPage: false,
         selectedCider: null
       }) 
     } else {
-      this.setState( prevState => ({ 
-        formVisibleOnPage: !prevState.formVisibleOnPage
-      }));
+      const { dispatch } = this.props;
+      const action = {
+        type: 'TOGGLE_FORM'
+      }
+      dispatch(action);
     }
   }
 
@@ -42,7 +43,10 @@ class CiderControl extends React.Component {
       id: id
     }
     dispatch(action); //dispatch our add which automatically updates the store
-    this.setState({formVisibleOnPage: false}); //still have to handle local state
+    const secondAction = {
+      type: 'TOGGLE_FORM'
+    }
+    dispatch(secondAction);
   }
 
   handleChangingSelectedCider = (id) => {
@@ -61,9 +65,9 @@ class CiderControl extends React.Component {
     let buttonText = null;
 
     if(this.state.selectedCider != null) { 
-      currentlyVisibleState = <CiderDetail cider = { this.state.selectedCider } />
+      currentlyVisibleState = <CiderDetail cider = { this.state.selectedCider } /> //state to props?
       buttonText = "Return to Cider Menu";
-    } else if (this.state.formVisibleOnPage) { 
+    } else if (this.props.formVisibleOnPage) { 
       currentlyVisibleState = <AddCiderForm onNewCiderTapped = { this.handleAddingNewCiderToMenu } />
       buttonText = "Return to Cider Menu";
     } else { 
