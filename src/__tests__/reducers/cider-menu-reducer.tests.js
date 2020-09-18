@@ -23,7 +23,6 @@ describe('ciderMenuReducer', () => {
 
 
   const ciderData = {
-    // type: 'ADD_CIDER',
     name:"Blackberry Cider",
     brewery:"Avid",
     alcoholContent: 6.2,
@@ -36,7 +35,7 @@ describe('ciderMenuReducer', () => {
     expect(ciderMenuReducer({}, { type: null })).toEqual({});
   });
 
-  test('Should successfully add a new cider object to the menu', () => {
+  test('Should successfully add a new cider object to the mainCiderList', () => {
     const { name, brewery, alcoholContent, price, remainingPints, id } = ciderData;
     action = {
       type: 'ADD_CIDER',
@@ -59,22 +58,22 @@ describe('ciderMenuReducer', () => {
     });
   });
 
-  // test('Should successfully delete a ciderMenu object', () => {
-  //   action = {
-  //     type: 'DELETE_CIDER',
-  //     id: 1
-  //   };
+  test('Should successfully delete a ciderMenu object', () => {
+    action = {
+      type: 'DELETE_CIDER',
+      id: 1
+    };
 
-  //   expect(ciderMenuReducer(currentState, action)).toEqual({
-  //     2: {
-  //       name:'Dry Cider',
-  //       brewery: 'Portland Cider Company',
-  //       alcoholContent: 5,
-  //       price: 5.5,
-  //       remainingPints: 124,
-  //       id: 2
-  //     }
-  //   });
-  // });
+    expect(ciderMenuReducer(currentState, action)).toEqual({
+      2: {
+        name:'Dry Cider',
+        brewery: 'Portland Cider Company',
+        alcoholContent: 5,
+        price: 5.5,
+        remainingPints: 124,
+        id: 2
+      }
+    });
+  });
 
 });
