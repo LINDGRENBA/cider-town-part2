@@ -86,7 +86,8 @@ CiderControl.propTypes = {
 
 const mapStateToProps = state => {
   return {
-    mainCiderList: state
+    mainCiderList: state.mainCiderList,
+    formVisibleOnPage: state.formVisibleOnPage
   }
 }
 

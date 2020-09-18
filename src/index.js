@@ -4,10 +4,10 @@ import './index.css';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import { createStore } from 'redux'; // for redux
-import reducer from './reducers/cider-menu-reducer'; // for redux
 import { Provider } from 'react-redux'; // for redux
+import rootReducer from './reducers/index';
 
-const store = createStore(reducer); // store is a redux store that knows how to handle the actions we've defined
+const store = createStore(rootReducer); // store is a redux store that knows how to handle the actions we've defined
 
 store.subscribe(() => 
   console.log(store.getState())
