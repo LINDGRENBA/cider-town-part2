@@ -65,13 +65,13 @@ class CiderControl extends React.Component {
     let buttonText = null;
 
     if(this.state.selectedCider != null) { 
-      currentlyVisibleState = <CiderDetail cider = { this.state.selectedCider } /> //state to props?
+      currentlyVisibleState = <CiderDetail cider={ this.state.selectedCider } /> //state to props?
       buttonText = "Return to Cider Menu";
     } else if (this.props.formVisibleOnPage) { 
-      currentlyVisibleState = <AddCiderForm onNewCiderTapped = { this.handleAddingNewCiderToMenu } />
+      currentlyVisibleState = <AddCiderForm onNewCiderTapped={ this.handleAddingNewCiderToMenu } />
       buttonText = "Return to Cider Menu";
     } else { 
-      currentlyVisibleState = <CiderMenu ciderMenu = { this.props.mainCiderList } onCiderSelection = { this.handleChangingSelectedCider } onCiderPour = { this.handleChangingNumberOfRemainginPints } /> 
+      currentlyVisibleState = <CiderMenu ciderMenu={ this.props.mainCiderList } onCiderSelection = { this.handleChangingSelectedCider } onCiderPour = { this.handleChangingNumberOfRemainginPints } /> 
       buttonText = "Add New Keg";
     }
 

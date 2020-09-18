@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 
 function CiderMenu(props) {  
   return (
-    <React.Fragment> 
-      {Object.values(props.ciderMenu).map((cider) => {
-        return <Cider
+    <React.Fragment>
+      <hr/> 
+      {Object.values(props.ciderMenu).map((cider) => 
+        <Cider
           whenCiderClicked = { props.onCiderSelection }
           whenCiderPoured = { props.onCiderPour }
           name = { cider.name }
@@ -15,8 +16,8 @@ function CiderMenu(props) {
           price = { cider.price }
           remainingPints = { cider.remainingPints }
           id = { cider.id }
-          key = { cider.id } />
-      })} 
+          key = { cider.id } /> 
+      )} 
     </React.Fragment>
   );
 }

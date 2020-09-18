@@ -16,7 +16,7 @@ function ReusableForm(props) {
           placeholder = 'Brewery Name'
           required />
         <input 
-          type = 'text'
+          type = 'number'
           name = 'alcoholContent'
           placeholder = 'ABV%'
           required />
