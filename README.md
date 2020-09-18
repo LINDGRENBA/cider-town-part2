@@ -47,10 +47,8 @@
 |---------|-------|-----|
 |  Error: Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: object. You likely forgot to export your component from the file it's defined in, or you might have mixed up default and named imports. Check the render method of `CiderControl`.  |  Caused by importing empty files?  |  Add content to empty components  |
 |  No button text visible in reusable form submit button  |  Incorrect component used in CiderControl.js  |  for `else if (this.state.formVisibleOnPage)` conditional, change `<ReusableForm />` to `<AddCiderForm />` |
-|  Adding new Cider is only adding the initial cider --> as a result, have 3 'Blackberry Cider' objects, each with the same properties and same id number  |  possibly `mainCiderList` incorrectly noted as `mainCiderMenu` in several places, specifically in prop types and reducers, so not recognized when set as prop of `<CiderMenu />` component in CiderControl.js  |  remove node_modules and re-install react and redux, correct `mainCiderMenu` to `mainCiderList`, commit, close and restart server with `npm start`  |
+|  Adding new Cider is only adding the initial cider --> as a result, have 3 'Blackberry Cider' objects, each with the same properties and same id number  |  not yet completed adding redux to project, no reducer yet created for handling cider objects  |  complete integration of redux into project  |
 |   TypeError: Cannot convert undefined or null to object, indicating issue with CiderMenu.js line 7 `<React.Fragment>` tag    |   possibly `mainCiderList` incorrectly noted as `mainCiderMenu` in several places, specifically in prop types and reducers, so not recognized when set as prop of `<CiderMenu />` component in CiderControl.js   |   remove node_modules and re-install react and redux, correct `mainCiderMenu` to `mainCiderList`, commit, close and restart server with `npm start`   |
-
-
 
 
 ## Available Scripts
