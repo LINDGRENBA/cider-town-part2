@@ -4,7 +4,6 @@ export default(state = {}, action) => {
     case 'ADD_TICKET':
       return Object.assign({}, state, {
         [id] : {
-          type: 'ADD_TICKET',
           name:"Blackberry Cider",
           brewery:"Avid",
           alcoholContent: 6.2,
@@ -13,6 +12,7 @@ export default(state = {}, action) => {
           id: 1
         }
       });
+      default:
+      return state;
   }
-  return state;
 };

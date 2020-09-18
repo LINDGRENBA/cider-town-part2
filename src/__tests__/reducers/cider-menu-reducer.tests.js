@@ -31,7 +31,6 @@ describe('ciderMenuReducer', () => {
 
     expect(ciderMenuReducer({}, action)).toEqual({
       [id] : {
-        type: 'ADD_TICKET',
         name:"Blackberry Cider",
         brewery:"Avid",
         alcoholContent: 6.2,
