@@ -4,19 +4,19 @@ export default(state = {}, action) => {
     case 'ADD_CIDER':
       return Object.assign({}, state, {
         [id] : {
-          name:"Blackberry Cider",
-          brewery:"Avid",
-          alcoholContent: 6.2,
-          price: 6,
-          remainingPints: 124,
-          id: 1
+          name: name,
+          brewery:brewery,
+          alcoholContent: alcoholContent,
+          price: price,
+          remainingPints: remainingPints,
+          id: id
         }
       });
       case 'DELETE_CIDER':
         const newState = {...state};
         delete newState[id];
         return newState; 
-      default:
+      default: 
       return state;
   }
 };

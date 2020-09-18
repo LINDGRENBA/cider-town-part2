@@ -10,7 +10,7 @@ class CiderControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false,
+      // formVisibleOnPage: false,
       // mainCiderList: [], redux will now handle our ciderList, not react
       selectedCider: null
     };    
@@ -20,7 +20,7 @@ class CiderControl extends React.Component {
     if(this.state.selectedCider != null) { 
       this.setState ({
         selectedCider: null
-      }) 
+      }); 
     } else {
       const { dispatch } = this.props;
       const action = {
@@ -44,7 +44,7 @@ class CiderControl extends React.Component {
     }
     dispatch(action); //dispatch our add which automatically updates the store
     const secondAction = {
-      type: 'TOGGLE_FORM'
+      type: 'TOGGLE_FORM',
     }
     dispatch(secondAction);
   }
