@@ -58,6 +58,29 @@ describe('ciderMenuReducer', () => {
     });
   });
 
+  test('Should successfully update a cider object in the mainCiderList', () => {
+    const { name, brewery, alcoholContent, price, remainingPints, id } = ciderData;
+    action = {
+      type: 'ADD_CIDER',
+      name: "Dry Cider",
+      brewery: brewery,
+      alcoholContent: alcoholContent,
+      price: price,
+      remainingPints: remainingPints,
+      id: id
+    };
+    expect(ciderMenuReducer({}, action)).toEqual({
+      [id] : {
+        name:"Blackberry Cider",
+        brewery:"Avid",
+        alcoholContent: 6.2,
+        price: 6,
+        remainingPints: 124,
+        id: 1
+      }
+    });
+  });
+
   test('Should successfully delete a ciderMenu object', () => {
     action = {
       type: 'DELETE_CIDER',
