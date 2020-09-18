@@ -2,6 +2,25 @@ import ciderMenuReducer from '../../reducers/cider-menu-reducer';
 
 describe('ciderMenuReducer', () => {
 
+  const currentState = {
+    1: {
+      name:'Blackberry Cider',
+      brewery: 'Avid',
+      alcoholContent: 6.2,
+      price: 6,
+      remainingPints: 124,
+      id: 1
+    },
+    2: {
+      name:'Dry Cider',
+      brewery: 'Portland Cider Company',
+      alcoholContent: 5,
+      price: 5.5,
+      remainingPints: 124,
+      id: 2
+    }
+  }
+
   let action;
   let ciderData = {
     type: 'ADD_TICKET',
@@ -37,6 +56,24 @@ describe('ciderMenuReducer', () => {
         price: 6,
         remainingPints: 124,
         id: 1
+      }
+    });
+  });
+
+  test('Should successfully delete a ciderMenu object', () => {
+    action = {
+      type: 'DELETE_TICKET',
+      id: 1
+    };
+
+    expect(ciderMenuReducer(currentState, action)).toEqual({
+      2: {
+        name:'Dry Cider',
+        brewery: 'Portland Cider Company',
+        alcoholContent: 5,
+        price: 5.5,
+        remainingPints: 124,
+        id: 2
       }
     });
   });
