@@ -1,6 +1,9 @@
 //file responsible for retrieving logic from other files and importing into one big module is known as a module index, so we name it index-reducer
 
 import rootReducer from '../../reducers/index';
+import { createStore } from 'redux';
+
+let store = createStore(rootReducer);
 
 describe('rootReducer', () => {
 
