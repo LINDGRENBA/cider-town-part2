@@ -18,6 +18,17 @@ describe('ciderMenuReducer', () => {
   });
 
   test('Should successfully add a new cider object to the menu', () => {
+    const { name, brewery, alcoholContent, price, remainingPints, id } = ciderData;
+    action = {
+      type: 'ADD_TICKET',
+      name: name,
+      brewery: brewery,
+      alcoholContent: alcoholContent,
+      price: price,
+      remainingPints: remainingPints,
+      id: id
+    };
+
     expect(ciderMenuReducer({}, action)).toEqual({
       [id] : {
         type: 'ADD_TICKET',
