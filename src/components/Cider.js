@@ -26,7 +26,7 @@ Cider.propTypes = {
   name: PropTypes.string.isRequired,
   brewery: PropTypes.string.isRequired,
   alcoholContent: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  price: PropTypes.string.isRequired,
   remainingPints: PropTypes.number.isRequired,
   id: PropTypes.string,
   whenCiderClicked: PropTypes.func,
