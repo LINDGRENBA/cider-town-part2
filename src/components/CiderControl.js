@@ -2,6 +2,7 @@ import React from 'react';
 import AddCiderForm from './AddCiderForm';
 import CiderDetail from './CiderDetail';
 import CiderMenu from './CiderMenu';
+import EditCiderForm from './EditCiderForm';
 import { connect } from 'react-redux'; 
 import PropTypes from 'prop-types';
 
@@ -10,7 +11,8 @@ class CiderControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      selectedCider: null
+      selectedCider: null,
+      editing: false
     };    
   }
 
@@ -58,12 +60,38 @@ class CiderControl extends React.Component {
     this.setState({selectedKeg: newNumberOfPints});
   }
 
+  handleEditClick = () => {
+    this.setState({editing: true});
+  }
+
+  handleEditingCiderInList = (ciderToEdit) => {
+    const { dispatch } = this.props;
+    const { id, name, brewery, alcoholContent, price, remainingPints } = ciderToEdit;
+    const action = {
+      type: 'ADD_TICKET',
+      name: name,
+      brewery: brewery,
+      alcoholContent: alcoholContent,
+      price: price,
+      remainingPints: remainingPints,
+      id: id
+    }
+    dispatch(action);
+    this.setState({
+      editing: false,
+      selectedCider: null
+    });
+  }
+
   render () {
     let currentlyVisibleState = null;
     let buttonText = null;
 
-    if(this.state.selectedCider != null) { 
-      currentlyVisibleState = <CiderDetail cider={ this.state.selectedCider } /> //state to props?
+    if (this.state.editing) {
+      currentlyVisibleState = <EditCiderForm cider = { this.state.selectedCider } onEditCider = { this.handleEditingCiderInList } />
+      buttonText = "Return to Cider Menu";
+    } else if(this.state.selectedCider != null) { 
+      currentlyVisibleState = <CiderDetail cider={ this.state.selectedCider } onClickingEdit = {this.handleEditClick } /> 
       buttonText = "Return to Cider Menu";
     } else if (this.props.formVisibleOnPage) { 
       currentlyVisibleState = <AddCiderForm onNewCiderTapped={ this.handleAddingNewCiderToMenu } />
