@@ -6,8 +6,9 @@ function CiderMenu(props) {
   return (
     <React.Fragment>
       <hr/> 
-      {Object.values(props.ciderMenu).map((cider) => 
-        <Cider
+      {Object.values(props.ciderMenu).map((cider) => {
+
+        return <Cider
           whenCiderClicked = { props.onCiderSelection }
           whenCiderPoured = { props.onCiderPour }
           name = { cider.name }
@@ -17,7 +18,8 @@ function CiderMenu(props) {
           remainingPints = { cider.remainingPints }
           id = { cider.id }
           key = { cider.id } /> 
-      )} 
+        })} 
+      
     </React.Fragment>
   );
 }

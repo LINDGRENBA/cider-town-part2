@@ -19,7 +19,8 @@ class CiderControl extends React.Component {
   handleClick = () => {
     if(this.state.selectedCider != null) { 
       this.setState ({
-        selectedCider: null
+        selectedCider: null,
+        editing: false
       }); 
     } else {
       const { dispatch } = this.props;
@@ -90,7 +91,7 @@ class CiderControl extends React.Component {
     if (this.state.editing) {
       currentlyVisibleState = <EditCiderForm cider = { this.state.selectedCider } onEditCider = { this.handleEditingCiderInList } />
       buttonText = "Return to Cider Menu";
-    } else if(this.state.selectedCider != null) { 
+    } else if (this.state.selectedCider != null) { 
       currentlyVisibleState = <CiderDetail cider={ this.state.selectedCider } onClickingEdit = {this.handleEditClick } /> 
       buttonText = "Return to Cider Menu";
     } else if (this.props.formVisibleOnPage) { 
